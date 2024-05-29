@@ -1,3 +1,61 @@
+import random, requests , re , sys , os , time, getpass
+import os,sys,time,json,random,re,string,platform,base64,uuid
+from bs4 import BeautifulSoup as sop
+from bs4 import BeautifulSoup
+import requests as ress
+from datetime import date
+from datetime import datetime
+from time import sleep
+from os import system as s
+from time import sleep as waktu
+try:
+    import requests
+    from concurrent.futures import ThreadPoolExecutor as ThreadPool
+    import mechanize
+    from requests.exceptions import ConnectionError
+except ModuleNotFoundError:
+    os.system('pip install mechanize requests futures bs4==2 > /dev/null')
+    os.system('pip install bs4')
+loop = 0
+oks = []
+cps = []
+twf =[]
+ses=requests.Session()
+
+#----------User Access Controler----------#👇
+
+# import os, getpass, requests, sys
+
+os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests bs4')
+os.system('clear')        
+
+approval_description = ("""
+\033[0mTo buy this tool,
+\033[0mplease connect from Facebook or Telegram.
+
+\033[0mTelegram acc:  @wt4p2p
+\033[0mTelegram page: https://t.me/wt4p2 
+""")
+
+print("Loading...")
+url = "https://raw.githubusercontent.com/oakarminmg65/Fb-clone-paid-tool/main/ApprovedUsers.txt"
+response = requests.get(url)
+approved_users = response.text
+
+user_id = str(os.geteuid())
+user_name = getpass.getuser()
+key = user_id + user_name
+
+if key in approved_users:
+    print("\nYour key: " + key)
+    print("Your key is approved")
+    # time.sleep(2)
+else:
+    print("\nYour key: " + key)
+    print("Your key is not approved")
+    print(approval_description)
+    sys.exit()
+
 # decoder by cobra linux command __Tools Owner Nahid Afridy
 # https://github.com/NAHID-AFRIDY/DECODER
 # Python 3.11 ___WhatsApp 01923092304
